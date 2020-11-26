@@ -10,6 +10,8 @@ pip3 install wheel
 git config --global user.email "ci_notify@linaro.org"
 git config --global user.name "Linaro CI"
 
+cd ${WORKSPACE}
+
 git clone --depth 1 "https://review.mlplatform.org/ml/ComputeLibrary"
 git clone "https://review.mlplatform.org/ml/armnn"
 git clone --depth 1 https://github.com/protocolbuffers/protobuf.git --branch v3.9.2 --single-branch
