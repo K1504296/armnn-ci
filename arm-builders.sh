@@ -39,8 +39,7 @@ fi
 
 python3 --version
 
-cd ${WORKSPACE}/armnn
-git checkout master
+gcc --version
 
 #build swig4.0 for PyArmNN
 cd ${WORKSPACE}
