@@ -3,8 +3,6 @@
 set -ex
 
 sudo apt -q=2 update
-sudo apt -q=2 install -y --no-install-recommends build-essential scons cmake git autoconf automake curl libtool libpthread-stubs0-dev
-sudo apt -q=2 install -y --no-install-recommends python3-pip virtualenv python3-dev python3-setuptools libboost-dev
 pip3 install wheel
 # Set local configuration
 git config --global user.email "ci_notify@linaro.org"
@@ -50,6 +48,7 @@ make
 make install
 
 cd ${WORKSPACE}/ComputeLibrary
+git checkout be7d6acfe2b29dccb9776afb2775857cc07b793a
 #need to add if loops for opencl=1 embed_kernels=1 and neon=1
 scons -u -j$(nproc) arch=arm64-v8a extra_cxx_flags="-fPIC" benchmark_tests=1 validation_tests=1 embed_kernels=1
 
