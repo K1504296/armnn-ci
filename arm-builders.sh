@@ -48,6 +48,7 @@ make
 make install
 
 cd ${WORKSPACE}/ComputeLibrary
+git pull
 git checkout be7d6acfe2b29dccb9776afb2775857cc07b793a
 #need to add if loops for opencl=1 embed_kernels=1 and neon=1
 scons -u -j$(nproc) arch=arm64-v8a extra_cxx_flags="-fPIC" benchmark_tests=1 validation_tests=1 embed_kernels=1
