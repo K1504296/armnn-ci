@@ -48,8 +48,7 @@ make
 make install
 
 cd ${WORKSPACE}/ComputeLibrary
-git fetch "https://review.mlplatform.org/ml/ComputeLibrary" refs/changes/30/4230/5 && git checkout FETCH_HEAD
-git pull
+git fetch "https://review.mlplatform.org/ml/ComputeLibrary" refs/changes/30/4230/5 && git cherry-pick FETCH_HEAD
 #need to add for opencl=1 embed_kernels=1 and neon=1
 scons -u -j$(nproc) arch=arm64-v8a extra_cxx_flags="-fPIC" benchmark_tests=1 validation_tests=1 embed_kernels=1
 
