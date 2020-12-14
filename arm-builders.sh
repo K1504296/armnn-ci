@@ -17,7 +17,7 @@ git clone --depth 1 https://github.com/protocolbuffers/protobuf.git --branch v3.
 git clone --depth 1 https://github.com/tensorflow/tensorflow.git --branch r2.0 --single-branch
 git clone --depth 1 https://github.com/google/flatbuffers.git --branch v1.12.0 --single-branch
 
-sudo apt-get install libboost-all-dev
+sudo apt-get install -y libboost-all-dev
 #swig 4.0
 wget -q http://prdownloads.sourceforge.net/swig/swig-4.0.2.tar.gz
 #export ONNX_ML=1
