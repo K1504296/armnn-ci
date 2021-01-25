@@ -108,7 +108,7 @@ tar -cJf /tmp/armnn-full.tar.xz ${WORKSPACE}
 
 mv armnn/include armnn/build
 mv armnn/build .
-mv protobuf-host/lib/libprotobuf.so.20.0.2 build
+mv protobuf-host/lib/libprotobuf.so.* build
 rm -rf armnn ComputeLibrary flatbuffers protobuf-host tensorflow-protobuf builders.sh
 tar -cJf /tmp/armnn.tar.xz ${WORKSPACE}
 
