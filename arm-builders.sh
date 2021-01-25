@@ -90,6 +90,7 @@ cmake .. \
   -DBUILD_TF_PARSER=1 \
   -DPROTOBUF_ROOT=${WORKSPACE}/protobuf-host \
   -DBUILD_TF_LITE_PARSER=1 \
+  -DARMNNREF=1 \
   -DBUILD_TESTS=1 -DBUILD_UNIT_TESTS=1 \
   -DTF_LITE_GENERATED_PATH=${WORKSPACE}/tensorflow/tensorflow/lite/schema \
   -DFLATBUFFERS_ROOT=${WORKSPACE}/flatbuffers \
@@ -99,7 +100,6 @@ cmake .. \
   -DBUILD_PYTHON_WHL=1
 make -j$(nproc)
 
-#   -DARMNNREF=1 \
 
 cd ${WORKSPACE}
 rm -rf protobuf tensorflow
