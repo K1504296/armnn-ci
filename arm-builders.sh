@@ -12,8 +12,8 @@ cd ${WORKSPACE}
 
 git clone --depth 1 "https://review.mlplatform.org/ml/ComputeLibrary"
 git clone "https://review.mlplatform.org/ml/armnn"
-git clone --depth 1 https://github.com/protocolbuffers/protobuf.git --branch v3.9.2 --single-branch
-git clone --depth 1 https://github.com/tensorflow/tensorflow.git --branch r2.0 --single-branch
+git clone --depth 1 https://github.com/protocolbuffers/protobuf.git --branch v3.12.0 --single-branch
+git clone --depth 1 https://github.com/tensorflow/tensorflow.git --branch r2.3 --single-branch
 git clone --depth 1 https://github.com/google/flatbuffers.git --branch v1.12.0 --single-branch
 
 sudo apt-get install -y libboost-all-dev
