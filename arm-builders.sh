@@ -102,9 +102,10 @@ make -j$(nproc)
 
 
 cd ${WORKSPACE}
+tar -cJf /tmp/armnn-full.tar.xz ${WORKSPACE}
+
 rm -rf protobuf tensorflow
 find ${WORKSPACE} -type f -name *.o -delete
-tar -cJf /tmp/armnn-full.tar.xz ${WORKSPACE}
 
 mv armnn/include armnn/build
 mv armnn/build .
