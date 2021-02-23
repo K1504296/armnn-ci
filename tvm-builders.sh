@@ -30,7 +30,7 @@ cd build && cmake ..
 make -j$(nproc)
 sudo make install
 
-tar -cjf /tmp/tvm.tar.xz ${WORKSPACE}/tvm
+tar -cjf /tmp/tvm.tar.xz -C ${WORKSPACE} tvm
 
 
 mkdir ${WORKSPACE}/out
