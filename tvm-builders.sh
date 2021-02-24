@@ -31,11 +31,20 @@ cd build && cmake ..
 make -j$(nproc)
 sudo make install
 
-#cd ${WORKSPACE}/tvm/build
-#make cpptest
-
 cd ${WORKSPACE}/tvm
-./tests/scripts/task_cpp_unittest.sh
+source tests/scripts/setup-pytest-env.sh
+export LD_LIBRARY_PATH="lib:${LD_LIBRARY_PATH:-}"
+export VTA_HW_PATH=`pwd` /3rdparty/vta-hw
+export TVM_BIND_THREADS=0
+export OMP_NUM_THREADS=1
+
+cd ${WORKSPACE}/tvm/build
+
+make cpptest -j$(nproc)
+make crttest
+
+#cd ${WORKSPACE}/tvm
+#./tests/scripts/task_cpp_unittest.sh
 
 tar -cjf /tmp/tvm.tar.xz ${WORKSPACE}
 
