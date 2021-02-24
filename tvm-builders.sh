@@ -14,8 +14,6 @@ cd ${WORKSPACE}
 git clone --recursive https://github.com/apache/tvm tvm
 
 cd tvm && mkdir build
-export TVM_HOME=`pwd`
-export PYTHONPATH="${TVM_HOME}"/python:${PYTHONPATH}
 
 cp cmake/config.cmake build
 sed -i -e 's/USE_MICRO OFF/USE_MICRO ON/' build/config.cmake
@@ -24,13 +22,15 @@ sed -i -e 's/USE_MICRO_STANDALONE_RUNTIME OFF/USE_MICRO_STANDALONE_RUNTIME ON/' 
 cd build && cmake ..
 make -j$(nproc)
 
-cd ${WORKSPACE}/tvm && git clone https://github.com/google/googletest
+cd ${WORKSPACE}/tvm && export TVM_HOME=`pwd`
+export PYTHONPATH="${TVM_HOME}"/python:${PYTHONPATH}
+
+git clone https://github.com/google/googletest
 cd googletest && mkdir build
 cd build && cmake ..
 make -j$(nproc)
 sudo make install
 
-sudo apt-get update
 cd ${WORKSPACE}/tvm/build
 make cpptest
 
