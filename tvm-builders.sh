@@ -34,7 +34,7 @@ sudo make install
 cd ${WORKSPACE}/tvm
 source tests/scripts/setup-pytest-env.sh
 export LD_LIBRARY_PATH="lib:${LD_LIBRARY_PATH:-}"
-export VTA_HW_PATH=`pwd` /3rdparty/vta-hw
+export VTA_HW_PATH=`pwd`/3rdparty/vta-hw
 export TVM_BIND_THREADS=0
 export OMP_NUM_THREADS=1
 
