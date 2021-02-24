@@ -30,6 +30,9 @@ cd build && cmake ..
 make -j$(nproc)
 sudo make install
 
+cd ${WORKSPACE}/tvm/build
+make cpptest
+
 tar -cjf /tmp/tvm.tar.xz -C ${WORKSPACE} tvm
 
 
