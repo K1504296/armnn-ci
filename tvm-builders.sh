@@ -34,7 +34,7 @@ sudo apt-get update
 cd ${WORKSPACE}/tvm/build
 make cpptest
 
-tar -cjf /tmp/tvm.tar.xz -C ${WORKSPACE} tvm
+tar -cjf /tmp/tvm.tar.xz ${WORKSPACE}/tvm
 
 
 mkdir ${WORKSPACE}/out
