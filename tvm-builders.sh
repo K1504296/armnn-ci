@@ -25,7 +25,7 @@ make -j$(nproc)
 cd ${WORKSPACE}/tvm && export TVM_HOME=`pwd`
 export PYTHONPATH="${TVM_HOME}"/python:${PYTHONPATH}
 
-cd ${WORKSPACE} && git clone https://github.com/google/googletest
+cd ${WORKSPACE}/tvm && git clone https://github.com/google/googletest
 cd googletest && mkdir build
 cd build && cmake ..
 make -j$(nproc)
@@ -37,8 +37,6 @@ export LD_LIBRARY_PATH="lib:${LD_LIBRARY_PATH:-}"
 export VTA_HW_PATH=`pwd`/3rdparty/vta-hw
 export TVM_BIND_THREADS=0
 export OMP_NUM_THREADS=1
-
-cd ${WORKSPACE}/tvm/build
 
 make cpptest -j$(nproc)
 make crttest
