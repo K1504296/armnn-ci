@@ -25,7 +25,7 @@ make -j$(nproc)
 cd ${WORKSPACE}/tvm && export TVM_HOME=`pwd`
 export PYTHONPATH="${TVM_HOME}"/python:${PYTHONPATH}
 
-git clone https://github.com/google/googletest
+cd ${WORKSPACE} && git clone https://github.com/google/googletest
 cd googletest && mkdir build
 cd build && cmake ..
 make -j$(nproc)
@@ -34,7 +34,7 @@ sudo make install
 cd ${WORKSPACE}/tvm/build
 make cpptest
 
-tar -cjf /tmp/tvm.tar.xz ${WORKSPACE}/tvm
+tar -cjf /tmp/tvm.tar.xz ${WORKSPACE}
 
 
 mkdir ${WORKSPACE}/out
