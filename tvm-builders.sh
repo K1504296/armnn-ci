@@ -31,8 +31,11 @@ cd build && cmake ..
 make -j$(nproc)
 sudo make install
 
-cd ${WORKSPACE}/tvm/build
-make cpptest
+#cd ${WORKSPACE}/tvm/build
+#make cpptest
+
+cd ${WORKSPACE}/tvm
+./tests/scripts/task_cpp_unittest.sh
 
 tar -cjf /tmp/tvm.tar.xz ${WORKSPACE}
 
