@@ -30,6 +30,7 @@ cd build && cmake ..
 make -j$(nproc)
 sudo make install
 
+sudo apt-get update
 cd ${WORKSPACE}/tvm/build
 make cpptest
 
