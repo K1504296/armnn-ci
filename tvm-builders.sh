@@ -3,13 +3,17 @@
 set -ex
 
 sudo apt -q=2 update
-sudo apt-get -y install llvm
+
 pip3 install wheel
 # Set local configuration
 git config --global user.email "ci_notify@linaro.org"
 git config --global user.name "Linaro CI"
 
 cd ${WORKSPACE}
+
+wget http://ftp.br.debian.org/debian/pool/main/l/llvm-toolchain-11/libllvm11_11.0.1-2_arm64.deb
+dpkg -i libllvm11_11.0.1-2_arm64.deb
+sudo apt-get -y install llvm
 
 git clone --recursive https://github.com/apache/tvm tvm
 
