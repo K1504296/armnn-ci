@@ -3,7 +3,7 @@
 set -ex
 
 sudo apt -q=2 update
-
+sudo apt-get -y install libc6 libedit2 libffi7 libgcc-s1 libstdc++6 libtinfo6 libz3-4 zlib1g
 pip3 install wheel
 # Set local configuration
 git config --global user.email "ci_notify@linaro.org"
