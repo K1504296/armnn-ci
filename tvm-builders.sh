@@ -3,7 +3,7 @@
 set -ex
 
 sudo apt -q=2 update
-sudo apt-get -y install llvm
+sudo apt-get -y install libllvm11 llvm
 pip3 install wheel
 # Set local configuration
 git config --global user.email "ci_notify@linaro.org"
