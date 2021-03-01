@@ -48,7 +48,7 @@ make crttest
 #cd ${WORKSPACE}/tvm
 #./tests/scripts/task_cpp_unittest.sh
 
-tar -cjf /tmp/tvm.tar.xz ${WORKSPACE} -C /tvm
+tar -cjf /tmp/tvm.tar.xz ${WORKSPACE} -C /home/buildslave/workspace/tvm-ci-build tvm
 
 
 mkdir ${WORKSPACE}/out
