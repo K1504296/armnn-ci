@@ -3,7 +3,7 @@
 set -ex
 
 sudo apt -q=2 update
-sudo apt-get -y install libc6 libedit2 libffi7 libgcc-s1 libstdc++6 libtinfo6 libz3-4 zlib1g
+sudo apt-get -y install libc6 libedit2 libstdc++6 libz3-4 zlib1g
 pip3 install wheel
 # Set local configuration
 git config --global user.email "ci_notify@linaro.org"
@@ -48,7 +48,7 @@ make crttest
 #cd ${WORKSPACE}/tvm
 #./tests/scripts/task_cpp_unittest.sh
 
-tar -cjf /tmp/tvm.tar.xz ${WORKSPACE}
+tar -cjf /tmp/tvm.tar.xz ${WORKSPACE} -C /tvm
 
 
 mkdir ${WORKSPACE}/out
