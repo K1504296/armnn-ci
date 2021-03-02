@@ -58,7 +58,7 @@ cd ${WORKSPACE}/ComputeLibrary
 #git fetch "https://review.mlplatform.org/ml/ComputeLibrary" refs/changes/30/4230/5 && git cherry-pick FETCH_HEAD
 #need to add for opencl=1 embed_kernels=1 and neon=1
 #scons Werror=1 -u -j$(nproc) arch=arm64-v8a extra_cxx_flags="-fPIC" benchmark_tests=1 validation_tests=1 embed_kernels=1
-scons Werror=1 -u -j$(nproc) arch=arm64-v8a benchmark_tests=0 debug=0 embed_kernels=1
+scons Werror=1 -u -j$(nproc) arch=arm64-v8a benchmark_tests=1 debug=1 embed_kernels=1
 
 #build Protobuf
 cd ${WORKSPACE}/protobuf
