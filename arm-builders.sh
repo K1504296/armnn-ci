@@ -108,6 +108,8 @@ make -j$(nproc)
 
 
 cd ${WORKSPACE}
+mkdir compute-build && mv ComputeLibrary/build compute-build || exit
+rm -r ComputeLibrary
 tar -cJf /tmp/armnn-full.tar.xz ${WORKSPACE}
 
 rm -rf protobuf tensorflow
