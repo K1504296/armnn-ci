@@ -10,7 +10,7 @@ git config --global user.name "Linaro CI"
 
 cd ${WORKSPACE}
 
-git clone --depth 1 "https://review.mlplatform.org/ml/ComputeLibrary"
+#git clone --depth 1 "https://review.mlplatform.org/ml/ComputeLibrary"
 git clone "https://review.mlplatform.org/ml/armnn"
 git clone --depth 1 https://github.com/protocolbuffers/protobuf.git --branch v3.12.0 --single-branch
 git clone --depth 1 https://github.com/tensorflow/tensorflow.git --branch r2.3 --single-branch
@@ -22,6 +22,8 @@ wget -q http://prdownloads.sourceforge.net/swig/swig-4.0.2.tar.gz
 #export ONNX_ML=1
 #git clone https://github.com/onnx/onnx.git
 #unset ONNX_ML
+#ComputeLibrary prebuilt
+wget -q https://github.com/ARM-software/ComputeLibrary/releases/download/v21.02/arm_compute-v21.02-bin-linux.tar.gz
 
 if [ -n "$GERRIT_PROJECT" ] && [ $GERRIT_EVENT_TYPE == "patchset-created" ]; then
     cd armnn
@@ -49,10 +51,14 @@ cd ${WORKSPACE}/swig-4.0.2
 make
 make install
 
+
+#cd ${WORKSPACE}
+#tar xf arm_compute-v21.02-bin-linux.tar.gz
 cd ${WORKSPACE}/ComputeLibrary
 #git fetch "https://review.mlplatform.org/ml/ComputeLibrary" refs/changes/30/4230/5 && git cherry-pick FETCH_HEAD
 #need to add for opencl=1 embed_kernels=1 and neon=1
-scons Werror=1 -u -j$(nproc) arch=arm64-v8a extra_cxx_flags="-fPIC" benchmark_tests=1 validation_tests=1 embed_kernels=1
+#scons Werror=1 -u -j$(nproc) arch=arm64-v8a extra_cxx_flags="-fPIC" benchmark_tests=1 validation_tests=1 embed_kernels=1
+scons Werror=1 -u -j$(nproc) arch=arm64-v8a benchmark_tests=0 debug=1 embed_kernels=1
 
 #build Protobuf
 cd ${WORKSPACE}/protobuf
