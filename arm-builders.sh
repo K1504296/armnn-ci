@@ -10,7 +10,7 @@ git config --global user.name "Linaro CI"
 
 cd ${WORKSPACE}
 
-#git clone --depth 1 "https://review.mlplatform.org/ml/ComputeLibrary"
+git clone --depth 1 "https://review.mlplatform.org/ml/ComputeLibrary"
 git clone "https://review.mlplatform.org/ml/armnn"
 git clone --depth 1 https://github.com/protocolbuffers/protobuf.git --branch v3.12.0 --single-branch
 git clone --depth 1 https://github.com/tensorflow/tensorflow.git --branch r2.3 --single-branch
@@ -23,7 +23,7 @@ wget -q http://prdownloads.sourceforge.net/swig/swig-4.0.2.tar.gz
 #git clone https://github.com/onnx/onnx.git
 #unset ONNX_ML
 #ComputeLibrary prebuilt
-wget -q https://github.com/ARM-software/ComputeLibrary/releases/download/v21.02/arm_compute-v21.02-bin-linux.tar.gz
+#wget -q https://github.com/ARM-software/ComputeLibrary/releases/download/v21.02/arm_compute-v21.02-bin-linux.tar.gz
 
 if [ -n "$GERRIT_PROJECT" ] && [ $GERRIT_EVENT_TYPE == "patchset-created" ]; then
     cd armnn
