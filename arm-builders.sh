@@ -108,7 +108,7 @@ make -j$(nproc)
 
 
 cd ${WORKSPACE}
-mkdir compute-build && mv ComputeLibrary/build compute-build || exit
+#mkdir compute-build && mv ComputeLibrary/build compute-build || exit
 rm -r ComputeLibrary
 tar -cJf /tmp/armnn-full.tar.xz ${WORKSPACE}
 
@@ -119,7 +119,7 @@ mv armnn/include armnn/build
 mv armnn/build .
 mv armnn/python .
 mv protobuf-host/lib/libprotobuf.so.* build
-rm -rf armnn ComputeLibrary flatbuffers protobuf-host tensorflow-protobuf builders.sh
+rm -rf armnn flatbuffers protobuf-host tensorflow-protobuf builders.sh
 tar -cJf /tmp/armnn.tar.xz ${WORKSPACE}
 
 mkdir ${WORKSPACE}/out
