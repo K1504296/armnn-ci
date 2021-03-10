@@ -3,7 +3,7 @@
 set -ex
 
 sudo apt -q=2 update
-sudo apt-get -y install libc6 libedit2 libstdc++6 libz3-4 zlib1g
+sudo apt-get -y install python3-dev virtualenv libboost-dev python3-setuptools libc6 libedit2 libstdc++6 libz3-4 zlib1g
 pip3 install wheel
 # Set local configuration
 git config --global user.email "ci_notify@linaro.org"
