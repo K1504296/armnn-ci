@@ -48,7 +48,7 @@ cd ${WORKSPACE}
 tar -xf swig-4.0.2.tar.gz && rm -rf swig-4.0.2.tar.gz
 cd ${WORKSPACE}/swig-4.0.2
 ./configure --prefix=${WORKSPACE}/swig-host --without-maximum-compile-warnings --without-pcre &&
-make -j(nproc)
+make -j$(nproc)
 make install
 
 
