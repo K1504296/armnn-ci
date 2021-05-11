@@ -48,7 +48,7 @@ cd ${WORKSPACE}
 tar -xf swig-4.0.2.tar.gz && rm -rf swig-4.0.2.tar.gz
 cd ${WORKSPACE}/swig-4.0.2
 ./configure --prefix=${WORKSPACE}/swig-host --without-maximum-compile-warnings --without-pcre &&
-make
+make -j(nproc)
 make install
 
 
@@ -106,6 +106,7 @@ cmake .. \
   -DBUILD_PYTHON_WHL=1
 make -j$(nproc)
 
+export XZ_DEFAULTS="-T 0"
 
 cd ${WORKSPACE}
 #mkdir compute-build && mv ComputeLibrary/build compute-build || exit
